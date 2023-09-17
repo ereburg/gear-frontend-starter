@@ -7,10 +7,10 @@ import type { BaseComponentProps } from '@/app/types'
 import { Sprite } from '@/components/ui/sprite'
 
 type LogoProps = BaseComponentProps & {
-  name?: string
+  label?: string
 }
 
-export function Logo({ className, name }: LogoProps) {
+export function Logo({ className, label }: LogoProps) {
   return (
     <NavLink
       to={ROUTES.HOME}
@@ -19,7 +19,7 @@ export function Logo({ className, name }: LogoProps) {
       }
     >
       <Sprite name="vara-logo" width={92} height={60} className={styles.logo} />
-      {name && <TextGradient className={styles.title}>{name}</TextGradient>}
+      {label && <TextGradient className={styles.title}>{label}</TextGradient>}
     </NavLink>
   )
 }
