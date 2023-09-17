@@ -9,7 +9,6 @@ import { IWalletExtensionContent, IWalletId } from '@/features/wallet/types'
 
 export const WALLET_ID_LOCAL_STORAGE_KEY = 'wallet'
 
-// @ts-ignore
 export const isNovaWallet = !!window?.walletExtension?.isNovaWallet
 
 export const WALLET = isNovaWallet

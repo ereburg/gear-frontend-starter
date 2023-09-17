@@ -9,9 +9,3 @@ declare module '*.txt' {
   const value: string
   export default value
 }
-
-declare global {
-  interface Window {
-    walletExtension?: { isNovaWallet: boolean }
-  }
-}

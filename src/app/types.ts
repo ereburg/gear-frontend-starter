@@ -17,3 +17,9 @@ export type SVGComponent = FC<
     title?: string | undefined
   }
 >
+
+declare global {
+  interface Window {
+    walletExtension?: { isNovaWallet: boolean }
+  }
+}

@@ -37,7 +37,6 @@ export function WalletModal({ onClose, open, setOpen }: WalletModalProps) {
   } = useWallet()
 
   useEffect(() => {
-    // @ts-ignore
     const isNovaWallet = !!window?.walletExtension?.isNovaWallet
 
     if (isNovaWallet) {
