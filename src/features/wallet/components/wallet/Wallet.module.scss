@@ -1,0 +1,38 @@
+@use '@/utils' as *;
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  @include gap(20px, right);
+}
+
+.button {
+  text-transform: capitalize;
+  letter-spacing: 0.03em;
+
+  @media screen and (max-width: 767px) {
+    padding-right: 30px;
+    padding-left: 30px;
+    font-size: 18px;
+  }
+
+  span {
+    display: block;
+    max-width: 15ch;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.icon {
+  pointer-events: none;
+}
+
+.balance {
+  b {
+    font-size: 20px;
+    line-height: 22px;
+    letter-spacing: -0.4px;
+  }
+}
