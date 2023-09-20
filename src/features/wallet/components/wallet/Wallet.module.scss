@@ -7,9 +7,6 @@
 }
 
 .button {
-  text-transform: capitalize;
-  letter-spacing: 0.03em;
-
   @media screen and (max-width: 767px) {
     padding-right: 30px;
     padding-left: 30px;
