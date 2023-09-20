@@ -6,36 +6,48 @@ import { Sprite } from '@/components/ui/sprite'
 type Props = BaseComponentProps & {
   icon: string
   value: string
+  decimal?: string
   unit?: string
 }
 
 type HOCProps = Omit<Props, 'icon' | 'children'>
 
-function Balance({ icon, value, unit, className }: Props) {
+export function Balance({ icon, value, decimal, unit, className }: Props) {
   return (
     <span className={clsx(styles.wrapper, className)}>
       <Sprite name={icon} width={24} height={24} />
-
       <span className={styles.balance}>
-        <b className={styles.amount}>{value}</b>
-        {unit && <span className={styles.unit}>{unit}</span>}
+        <b
+          className={styles.amount}
+          dangerouslySetInnerHTML={{ __html: value }}
+        />
+        {decimal && (
+          <span
+            className={clsx(styles.small, styles.decimal)}
+          >{`.${decimal}`}</span>
+        )}
+        {unit && (
+          <span className={clsx(styles.small, styles.unit)}>{unit}</span>
+        )}
       </span>
     </span>
   )
 }
 
-function VaraBalance({ value, unit, className }: HOCProps) {
+export function VaraBalance({ value, unit, className }: HOCProps) {
+  const v = value.split('.')
   return (
     <Balance
       icon={unit?.toLowerCase() === 'vara' ? 'vara-coin' : 'tvara-coin'}
-      value={value}
+      value={v[0].replaceAll(/,|\s/g, '&thinsp;')}
+      decimal={v[1]}
       unit={unit}
       className={className}
     />
   )
 }
 
-function PointsBalance({ value, unit = 'PPV', className }: HOCProps) {
+export function PointsBalance({ value, unit = 'PPV', className }: HOCProps) {
   return (
     <Balance
       icon={'points-coin'}
@@ -45,5 +57,3 @@ function PointsBalance({ value, unit = 'PPV', className }: HOCProps) {
     />
   )
 }
-
-export { VaraBalance, PointsBalance }
