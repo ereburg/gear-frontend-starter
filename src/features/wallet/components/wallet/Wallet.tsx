@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useAccount } from '@gear-js/react-hooks'
 import { Button } from '@/components/ui/button'
 import styles from './Wallet.module.scss'
-import { AccountIcon } from '@/components/ui/account-icon'
+import { WalletIcon } from '../wallet-icon'
 import { DialogsLibrary } from '@/components/dialogs'
 import clsx from 'clsx'
 import { VaraBalance } from '@/components/ui/balance'
@@ -36,7 +36,7 @@ export function Wallet({ className }: BaseComponentProps) {
           onClick={() => setOpen(true)}
         >
           {isSigned && (
-            <AccountIcon
+            <WalletIcon
               address={account.address}
               size={16}
               className={styles.icon}

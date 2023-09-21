@@ -7,7 +7,7 @@ import { WalletItem } from '../wallet-item'
 import styles from './WalletModal.module.scss'
 import { copyToClipboard } from '@/app/utils'
 import { ScrollArea } from '@/components/ui/scroll-area/scroll-area'
-import { AccountIcon } from '@/components/ui/account-icon'
+import { WalletIcon } from '../wallet-icon'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Dialog } from '@headlessui/react'
 import {
@@ -107,7 +107,7 @@ export function WalletModal({ onClose, open, setOpen }: WalletModalProps) {
               onClick={handleClick}
               disabled={isActive}
             >
-              <AccountIcon address={address} className={styles.accountIcon} />
+              <WalletIcon address={address} className={styles.accountIcon} />
               <span>{meta.name}</span>
             </Button>
 

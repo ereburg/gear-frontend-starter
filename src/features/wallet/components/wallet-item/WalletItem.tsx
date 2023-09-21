@@ -6,7 +6,7 @@ type Props = {
   name: string
 }
 
-export function WalletItem({ icon: Icon, name }: Props) {
+function WalletItem({ icon: Icon, name }: Props) {
   return (
     <span className={styles.wallet}>
       <Icon className={styles.icon} />
@@ -14,3 +14,5 @@ export function WalletItem({ icon: Icon, name }: Props) {
     </span>
   )
 }
+
+export { WalletItem }

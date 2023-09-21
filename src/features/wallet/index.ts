@@ -1,1 +1,1 @@
-export { Wallet, WalletModal } from './components'
+export { Wallet, WalletModal, WalletIcon } from './components'

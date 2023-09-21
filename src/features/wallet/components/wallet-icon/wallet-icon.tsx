@@ -1,12 +1,12 @@
-import { PolkadotIconProps, PolkadotIcon } from '@/features/polkadot-icon/'
 import { BaseComponentProps } from '@/app/types'
+import { PolkadotIcon, PolkadotIconProps } from './polkadot-icon'
 
 type Props = BaseComponentProps &
   Omit<PolkadotIconProps, 'address'> & {
     address?: string
   }
 
-export function AccountIcon({
+export function WalletIcon({
   children,
   className,
   size = 20,
